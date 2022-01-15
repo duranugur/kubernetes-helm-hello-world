@@ -1,0 +1,29 @@
+String gitOrigin = "git@github.com:duranugur/kubernetes-helm-hello-world.git"
+String triggerJob = "my-project-deploy"
+String tag2= '''$tag'''
+String dockerhub = "duranugur/hello-world"
+node{
+    stage ('Checkout') {
+        checkout([$class: 'GitSCM', branches: [[name: 'main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'd31c6f13-e1d9-4b4b-8965-cff2e6f91581', url: "${gitOrigin}"]]])
+    }
+    withCredentials([usernamePassword(credentialsId: 'dockerhub_id', passwordVariable: 'docker_password', usernameVariable: 'docker_username')]) {
+        stage ("Login Docker Hub"){
+            sh '''
+            docker login --username=$docker_username --password=$docker_password
+            '''
+        }
+    }
+    stage("Build APP Dockerfile"){
+        sh """
+        docker build -t ${dockerhub}:${tag2} .
+        """
+    }
+    stage("Push Docker Image"){
+         sh """
+         docker push ${dockerhub}:${tag2}
+        """
+    }
+    stage ('Deployment Job Trigger') {
+        build job: "${triggerJob}", parameters: [[$class: 'StringParameterValue', name: 'tag', value: "$tag"]],wait: false
+    }
+}

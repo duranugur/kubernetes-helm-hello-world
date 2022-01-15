@@ -1,0 +1,39 @@
+pipeline{
+    environment{
+        String namespace = "test"
+        String brandName = "hello-world-app"
+        String hostName = "chart-example.local"
+        String service = "hello-world-service"
+        String workerReplica = "1"
+        String image = "duranugur/hello-world"
+        String tag2 = '''$tag'''
+        String name= "hello-world"
+        String gitOrigin="git@github.com:duranugur/kubernetes-helm-hello-world.git"
+    }
+    agent any
+    stages{
+        stage ('Checkout'){
+            steps{  
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'd31c6f13-e1d9-4b4b-8965-cff2e6f91581', url: "${gitOrigin}"]]])
+            }
+        }
+        stage ('Helm Deploy'){
+            steps{
+                script{
+                    sh"""
+                        helm upgrade --install --force ${brandName} /var/lib/jenkins/workspace/my_project/helloworld-chart/ --set deploy.name=${name} --set deploy.hosts=${hostName} --set deploy.ingress_svc=${service} --set deploy.url=${hostName} --set deploy.replica=${workerReplica} --set deploy.repository=${image} --set deploy.tag=${tag2} --set deploy.namespace=${namespace} --namespace test
+                    """
+                }
+            }
+        }
+        stage ('Rollout Status') {
+            steps{
+                script{  
+                    sh """
+                        kubectl rollout status deployment $name-deployment -n ${namespace};
+                    """
+                }
+            }
+        }
+    }
+}
