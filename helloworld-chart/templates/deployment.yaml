@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
       - name: php
-        image: duranugur/hello-world:{{ .Values.deploy.tag }}
+        image: ugurduran/myrepo:{{ .Values.deploy.tag }}
         imagePullPolicy: Always
       dnsPolicy: Default
