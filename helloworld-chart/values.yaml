@@ -5,5 +5,5 @@ deploy:
   ingress_svc: hello-svc
   url: my-app
   replicas: 1
-  repository: duranugur/hello-world
+  repository: ugurduran/myrepo
   tag: 1.0.1
