@@ -1,6 +1,6 @@
 deploy:
   name: hello-world-deployment
-  namespace: test
+  namespace: prod-env
   hosts: my-app-hosts
   ingress_svc: hello-svc
   url: my-app
