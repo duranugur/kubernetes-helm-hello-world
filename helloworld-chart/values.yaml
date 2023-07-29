@@ -2,7 +2,7 @@ deploy:
   name: hello-world-deployment
   namespace: prod-env
   hosts: my-app-hosts
-  ingress_svc: hello-svc
+  ingress_svc: hello-prod-svc
   url: my-app
   replicas: 1
   repository: ugurduran/myrepo
