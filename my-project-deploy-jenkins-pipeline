@@ -1,14 +1,14 @@
 pipeline{
     environment{
-        String namespace = "test"
+        String namespace = "test-env"
         String brandName = "hello-world-app"
         String hostName = "chart-example.local"
         String service = "hello-world-service"
         String workerReplica = "1"
-        String image = "duranugur/hello-world"
+        String image = "ugurduran/myrepo"
         String tag2 = '''$tag'''
         String name= "hello-world"
-        String gitOrigin="git@github.com:duranugur/kubernetes-helm-hello-world.git"
+        String gitOrigin="https://github.com/duranugur/kubernetes-helm-hello-world.git"
     }
     agent any
     stages{
@@ -21,7 +21,7 @@ pipeline{
             steps{
                 script{
                     sh"""
-                        helm upgrade --install --force ${brandName} /var/lib/jenkins/workspace/my_project/helloworld-chart/ --set deploy.name=${name} --set deploy.hosts=${hostName} --set deploy.ingress_svc=${service} --set deploy.url=${hostName} --set deploy.replica=${workerReplica} --set deploy.repository=${image} --set deploy.tag=${tag2} --set deploy.namespace=${namespace} --namespace test
+                        helm upgrade --install --force ${brandName} /var/lib/jenkins/workspace/my-project-deploy-test/helloworld-chart --set deploy.name=${name} --set deploy.hosts=${hostName} --set deploy.ingress_svc=${service} --set deploy.url=${hostName} --set deploy.replica=${workerReplica} --set deploy.repository=${image} --set deploy.tag=${tag2} --set deploy.namespace=${namespace}
                     """
                 }
             }
