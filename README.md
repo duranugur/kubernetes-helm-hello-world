@@ -18,12 +18,6 @@ Server bağlantısı için EC2-connect ile server'a bağlandım.
 
 Daha sonra , EC2 server'a clı olarak docker , helm , velero , vault, aws-cli , terraform ve docker component'lerinin kurulumunu tamamladım.
 
-Jenkins:
-url : http://ec2-18-184-14-22.eu-central-1.compute.amazonaws.com:8080/
-
-username ve password bilgileri iletilecektir.
-<img width="1493" alt="image" src="https://github.com/duranugur/kubernetes-helm-hello-world/assets/57773256/e6058ca2-c593-4c5c-b9b4-32a322b8e8e3">
-
 AWS IAM:
 
 AWS console yönetimi için admin ve developer user'ları yetkileri ile oluşturuldu.
@@ -51,6 +45,12 @@ S3 helm backup:
 
 Helm paketlerini backup almak için aws-cli ile s3'e backup olusturuldu.
 <img width="1512" alt="image" src="https://github.com/duranugur/kubernetes-helm-hello-world/assets/57773256/686b8231-2b2c-4f1b-96ca-4efd45b50c23">
+
+Jenkins:
+url : http://ec2-18-184-14-22.eu-central-1.compute.amazonaws.com:8080/
+
+username ve password bilgileri terraform README.md içerisinde iletilecektir.
+<img width="1512" alt="image" src="https://github.com/duranugur/kubernetes-helm-hello-world/assets/57773256/17eb85c7-59a7-4952-b6b6-7a071691a258">
 
 Minikube k8s:
 
