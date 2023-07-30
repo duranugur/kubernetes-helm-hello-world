@@ -37,7 +37,8 @@ Daha sonra kendi dockerhub repo altına uguduran/myrepo altına pushluyoruz.
 Vault:
 
 url: https://ec2-18-184-14-22.eu-central-1.compute.amazonaws.com:8200
-<img width="1404" alt="image" src="https://github.com/duranugur/kubernetes-helm-hello-world/assets/57773256/2532f9ed-6580-4a3d-bfeb-7da59ba90703">
+<img width="1512" alt="image" src="https://github.com/duranugur/kubernetes-helm-hello-world/assets/57773256/2c5a2190-1547-4428-b93e-52a8e1fb5963">
+
 
 S3 helm backup:
 
