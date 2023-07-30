@@ -2,6 +2,7 @@ String gitOrigin = "git@github.com:duranugur/kubernetes-helm-hello-world.git"
 String triggerJob = "my-project-deploy"
 String tag2= '''$tag'''
 String dockerhub = "duranugur/hello-world"
+String deneme = "deneme"
 node{
     stage ('Checkout') {
         checkout([$class: 'GitSCM', branches: [[name: 'main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'd31c6f13-e1d9-4b4b-8965-cff2e6f91581', url: "${gitOrigin}"]]])
