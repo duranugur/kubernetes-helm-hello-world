@@ -51,6 +51,7 @@ url : http://ec2-18-184-14-22.eu-central-1.compute.amazonaws.com:8080/
 
 username ve password bilgileri terraform README.md içerisinde iletilecektir.
 <img width="1512" alt="image" src="https://github.com/duranugur/kubernetes-helm-hello-world/assets/57773256/17eb85c7-59a7-4952-b6b6-7a071691a258">
+<img width="1511" alt="image" src="https://github.com/duranugur/kubernetes-helm-hello-world/assets/57773256/e0cf7668-857d-4a19-827c-37597fb9a2aa">
 
 Minikube k8s:
 
