@@ -24,6 +24,13 @@ url : http://ec2-18-184-14-22.eu-central-1.compute.amazonaws.com:8080/
 username ve password bilgileri iletilecektir.
 <img width="1493" alt="image" src="https://github.com/duranugur/kubernetes-helm-hello-world/assets/57773256/e6058ca2-c593-4c5c-b9b4-32a322b8e8e3">
 
+AWS IAM:
+
+AWS console yönetimi için admin ve developer user'ları yetkileri ile oluşturuldu.
+
+<img width="1512" alt="image" src="https://github.com/duranugur/kubernetes-helm-hello-world/assets/57773256/ad21d4b9-0eb6-4ea2-939f-f82340939e5e">
+
+
 ECR Registry:
 
 Uygulama dockerize işlemi sonrası 2 farklı Registry için image'larımızı pushladık.
