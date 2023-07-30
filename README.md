@@ -1,4 +1,4 @@
-<img width="1124" alt="image" src="https://github.com/duranugur/kubernetes-helm-hello-world/assets/57773256/187c1c99-ef69-4e12-a772-1cfc4c31ba68">MY-PROJECT
+MY-PROJECT
 ---------------------
 Using Tools: AWS EC2, ECR, S3, Terraform, Jenkins, Helm, Docker, Dockerhub, Minikube k8s, Velero, Vault, Github
 
