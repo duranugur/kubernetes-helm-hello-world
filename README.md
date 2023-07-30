@@ -21,6 +21,27 @@ username ve password bilgileri iletilecektir.
 
 <img width="1493" alt="image" src="https://github.com/duranugur/kubernetes-helm-hello-world/assets/57773256/e6058ca2-c593-4c5c-b9b4-32a322b8e8e3">
 
+ECR Registry:
+
+Uygulama dockerize işlemi sonrası 2 farklı Registry için image'larımızı pushladık.
+
+İlk olarak ECR Reposunda charts reposu altına image'larımızı backuplıyoruz.
+
+<img width="1510" alt="image" src="https://github.com/duranugur/kubernetes-helm-hello-world/assets/57773256/4d30a26d-aff9-49af-a238-a3740da76481">
+
+Daha sonra kendi dockerhub repo altına uguduran/myrepo altına pushluyoruz.
+
+<img width="1508" alt="image" src="https://github.com/duranugur/kubernetes-helm-hello-world/assets/57773256/5cdd8747-2619-4da6-80a1-aa65a939e99d">
+
+Vault:
+
+url: https://ec2-18-184-14-22.eu-central-1.compute.amazonaws.com:8200
+
+<img width="1404" alt="image" src="https://github.com/duranugur/kubernetes-helm-hello-world/assets/57773256/2532f9ed-6580-4a3d-bfeb-7da59ba90703">
+
+
+
+
 
 
 
