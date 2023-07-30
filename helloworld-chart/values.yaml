@@ -1,7 +1,7 @@
 deploy:
   name: hello-world-deployment
   namespace: prod-env
-  hosts: my-app-hosts
+  hosts: my-app-prod-hosts
   ingress_svc: hello-prod-svc
   url: my-app
   replicas: 1
