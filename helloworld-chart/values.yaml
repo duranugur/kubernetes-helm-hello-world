@@ -1,5 +1,5 @@
 deploy:
-  name: hello-world-deployment
+  name: hello-world--prod-deployment
   namespace: prod-env
   hosts: my-app-prod-hosts
   ingress_svc: hello-prod-svc
