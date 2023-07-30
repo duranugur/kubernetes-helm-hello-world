@@ -1,7 +1,7 @@
-String gitOrigin = "git@github.com:duranugur/kubernetes-helm-hello-world.git"
-String triggerJob = "my-project-deploy"
+String gitOrigin = "https://github.com/duranugur/kubernetes-helm-hello-world.git"
+String triggerJob = "my-project-deploy-test"
 String tag2= '''$tag'''
-String dockerhub = "duranugur/hello-world"
+String dockerhub = "ugurduran/myrepo"
 node{
     stage ('Checkout') {
         checkout([$class: 'GitSCM', branches: [[name: 'main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'd31c6f13-e1d9-4b4b-8965-cff2e6f91581', url: "${gitOrigin}"]]])
@@ -21,6 +21,21 @@ node{
     stage("Push Docker Image"){
          sh """
          docker push ${dockerhub}:${tag2}
+        """
+    }
+    stage ("Login ECR"){
+        sh '''
+          aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin 025328880965.dkr.ecr.eu-central-1.amazonaws.com
+        '''
+    }
+    stage("Image tag ECR Image"){
+         sh """
+         docker tag ${dockerhub}:${tag2} 025328880965.dkr.ecr.eu-central-1.amazonaws.com/charts:${tag2}
+        """
+    }
+     stage("Push ECR Image"){
+         sh """
+         docker push 025328880965.dkr.ecr.eu-central-1.amazonaws.com/charts:${tag2}
         """
     }
     stage ('Deployment Job Trigger') {
