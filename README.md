@@ -45,6 +45,14 @@ Helm paketlerini backup almak için aws-cli ile s3'e backup olusturuldu.
 
 <img width="1512" alt="image" src="https://github.com/duranugur/kubernetes-helm-hello-world/assets/57773256/686b8231-2b2c-4f1b-96ca-4efd45b50c23">
 
+Minikube k8s:
+
+EC2 server üzerine uygulamalarızı k8s altyapısı ile deploy edildi.
+
+<img width="1512" alt="image" src="https://github.com/duranugur/kubernetes-helm-hello-world/assets/57773256/ad70ef62-1ecf-460a-bf7d-8316f41915e4">
+
+
+
 
 
 
