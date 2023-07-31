@@ -2,6 +2,8 @@ MY-PROJECT
 ---------------------
 Using Tools: AWS EC2, ECR, S3, Terraform, Jenkins, Helm, Docker, Dockerhub, Minikube k8s, Velero, Vault, Github
 
+Terraform : https://duranugur.medium.com/how-to-install-aws-ec2-install-jenkins-with-terraform-33f0c2b61891
+
 Terraform ile AWS üzerinde EC2 intance oluşturma ve üzerinde otomatik olarak " Jenkins " kurulumunu tamamladım. Burada EC2 makinesi oluştururken bu makineye özel bir Jenkins-sg terraform ile oluşturuldu. 
 
 <img width="1124" alt="image" src="https://github.com/duranugur/kubernetes-helm-hello-world/assets/57773256/7c1c7bbc-3009-45c1-ba63-31798a158773">
